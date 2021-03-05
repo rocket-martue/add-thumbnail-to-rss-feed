@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin name: Add thumbnail to rss feed
- * Plugin URI:
+ * Plugin URI: https://github.com/rocket-martue/add-thumbnail-to-rss-feed
  * Description: Add thumbnail to rss feed.
  * Version: 1.0.0
  * Author: Rocket Martue
