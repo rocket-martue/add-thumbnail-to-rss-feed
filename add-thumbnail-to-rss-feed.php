@@ -13,7 +13,7 @@
 add_action (
 	'rss2_ns',
 	function() {
-		return 'xmlns:media="http://search.yahoo.com/mrss/"';
+		echo 'xmlns:media="http://search.yahoo.com/mrss/"';
 	}
 );
 add_action (
@@ -22,7 +22,7 @@ add_action (
 		global $post;
 		if ( has_post_thumbnail( $post->ID ) ) {
 			$thumbnail = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
-			return "<media:thumbnail>" .$thumbnail. "</media:thumbnail>";
+			echo "<media:thumbnail>" .$thumbnail. "</media:thumbnail>";
 		}
 	}
 );
