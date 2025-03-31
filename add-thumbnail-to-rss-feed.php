@@ -34,7 +34,6 @@ add_action(
 		global $post;
 		if ( has_post_thumbnail( $post->ID ) ) {
 			$thumbnail = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ), 'full' );
-			$thumbnail = apply_filters( 'add_thumbnail_to_rss_feed', $thumbnail, $post->ID );
 			echo '<media:thumbnail>' . esc_url( $thumbnail ) . '</media:thumbnail>';
 		}
 	}
