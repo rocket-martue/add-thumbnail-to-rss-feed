@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Get version
         id: get_version
@@ -58,7 +58,7 @@ jobs:
           zip -r rm-biz-calendar-${{ steps.get_version.outputs.version }}.zip rm-biz-calendar
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: rm-biz-calendar-${{ steps.get_version.outputs.version }}
           path: build/rm-biz-calendar-${{ steps.get_version.outputs.version }}.zip
