@@ -38,7 +38,7 @@ jobs:
 
       - name: Create plugin directory
         run: |
-          mkdir -p build/rm-biz-calendar
+          mkdir -p build/add-thumbnail-to-rss-feed
           rsync -av --exclude='build' \
             --exclude='.git' \
             --exclude='.github' \
@@ -50,21 +50,21 @@ jobs:
             --exclude='.local-docs' \
             --exclude='vendor' \
             --exclude='node_modules' \
-            ./ build/rm-biz-calendar/
+            ./ build/add-thumbnail-to-rss-feed/
 
       - name: Create ZIP file
         run: |
           cd build
-          zip -r rm-biz-calendar-${{ steps.get_version.outputs.version }}.zip rm-biz-calendar
+          zip -r add-thumbnail-to-rss-feed-${{ steps.get_version.outputs.version }}.zip add-thumbnail-to-rss-feed
 
       - name: Upload artifact
         uses: actions/upload-artifact@v6
         with:
-          name: rm-biz-calendar-${{ steps.get_version.outputs.version }}
-          path: build/rm-biz-calendar-${{ steps.get_version.outputs.version }}.zip
+          name: add-thumbnail-to-rss-feed-${{ steps.get_version.outputs.version }}
+          path: build/add-thumbnail-to-rss-feed-${{ steps.get_version.outputs.version }}.zip
 
       - name: Upload to release
         if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
         with:
-          files: build/rm-biz-calendar-${{ steps.get_version.outputs.version }}.zip
+          files: build/add-thumbnail-to-rss-feed-${{ steps.get_version.outputs.version }}.zip
